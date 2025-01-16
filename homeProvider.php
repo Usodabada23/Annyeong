@@ -15,6 +15,7 @@ $conn = connToDb();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/css/custom.css" rel="stylesheet">
     <title>Home</title>
 </head>
 <body style="padding-left:12%;padding-right:12%">
@@ -31,11 +32,11 @@ $conn = connToDb();
         <?php
             try{
                 $services = $conn->query("SELECT * FROM services")->fetchAll();
-                echo "<article class='main-container__card'>";
+                echo "<article class='card text-bg-light mb-3' style='max-width: 18rem;'>";
                 foreach($services as $service){
-                    echo "<h3 class='main-container__card--h3'>" . $service["name"] . "</h3>";
-                    echo "<p class='main-container__card--description'>" . $service["description"] . "</p>";
-                    echo "<p class='main-container__card--price'>" . $service["price"] . "$</p>";
+                    echo "<h3 class='card-title'>" . $service["name"] . "</h3>";
+                    echo "<p class='card-text'>" . $service["description"] . "</p>";
+                    echo "<p class='card-text'>" . $service["price"] . "$</p>";
                 }
                 echo "</article>";
             }catch(Exception $e){
