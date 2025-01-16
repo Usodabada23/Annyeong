@@ -3,21 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./css/style.css" rel="stylesheet">
     <title>Anneyo Login</title>
 </head>
 <body>
     <header class="header-container">
-        <h1 class="header-container__h1">Annyeong</h1>
+        <h1 class="header-container__h1">Annyeong<span>.<span></h1>
         <a href="/Annyeong/register.php" class="header-container__a">Register</a>
     </header>
-    <main class="main-container">
-        <h2 class="main-container__h2">Login</h2>
-        <form action="" method="post" class="main-container__form">
-            <div class="main-container__form--username">
+    <main class="login-container">
+        <h2 class="login-container__h2">Login</h2>
+        <form action="" method="post" class="login-container__form">
+            <div class="login-container__form--username">
                 <label for="username">Username</label>
                 <input type="text" name="username" />
             </div>
-            <div class="main-container__form--password">
+            <div class="login-container__form--password">
                 <label for="password">Password</label>
                 <input type="password" name="password" />
             </div>

@@ -15,34 +15,37 @@ $conn = connToDb();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="/css/custom.css" rel="stylesheet">
+    <link href="./css/style.css" rel="stylesheet">
     <title>Home</title>
 </head>
-<body style="padding-left:12%;padding-right:12%">
-    <header style="display:flex;"class="header-container">
+<body>
+    <header class="header-container">
         <h1 class="header-container__h1">Annyeong</h1>
 
-        <div style="margin:0 auto; left:0; padding-top:3%"class="header-container__right">
-            <a href="/Annyeong/profile.php" class="header-container__right--profile">My Account</a>
-            <a href="/Annyeong/logout.php" class="header-container__right--logout">Log out</a>
+        <div class="header-container__right">
+            <a href="/Annyeong/profile.php" class="header-container__a">My Account</a>
+            <a href="/Annyeong/logout.php" class="header-container__a">Log out</a>
         </div>
     </header>
-    <main class="main-container">
-        <h2 class="main-container__h2">Hello,  <?php echo $_SESSION["username"];?></h2>
+    <main>
+        <h2>Hello,  <?php echo $_SESSION["username"];?></h2>
+        <h3>Our Services</h3> 
+        <section class="homeProvider-container">
         <?php
             try{
                 $services = $conn->query("SELECT * FROM services")->fetchAll();
-                echo "<article class='card text-bg-light mb-3' style='max-width: 18rem;'>";
                 foreach($services as $service){
-                    echo "<h3 class='card-title'>" . $service["name"] . "</h3>";
-                    echo "<p class='card-text'>" . $service["description"] . "</p>";
-                    echo "<p class='card-text'>" . $service["price"] . "$</p>";
+                    echo "<article class='homeProvider-container__card'>";
+                    echo "<h4 class='homeProvider-container__card--h4'>" . $service["name"] . "</h4>";
+                    echo "<p class='homeProvider-container__card--description'>" . $service["description"] . "</p>";
+                    echo "<p class='homeProvider-container__card--price'>~" . $service["price"] . "$</p>";
+                    echo "</article>";
                 }
-                echo "</article>";
             }catch(Exception $e){
                 $e->getMessage();
             }
         ?>
+        </section>
     </main>
     <footer class="footer-container">
        <h4 class="footer-container__h4">Annyeong</h4>

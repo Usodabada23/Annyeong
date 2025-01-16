@@ -1,0 +1,84 @@
+@use "./variables";
+@use "./header";
+@use "./footer";
+
+.main-container {
+  font-family: variables.$second-typo;
+  background-color: variables.$background-color;
+  border-radius: 20px;
+  box-sizing: border-box;
+  padding: 40px;
+  max-width: 480px;
+  margin: 50px auto;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); 
+
+  &__title {
+    color: variables.$blue-main;
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    text-align: center;
+    text-transform: capitalize;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 20px;
+  }
+
+  &__field {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__label {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: variables.$blue-main;
+    letter-spacing: 0.5px; 
+  }
+
+  &__input {
+    background-color: variables.$white;
+    border-radius: 12px;
+    border: 1px solid #ddd;
+    color: #333;
+    font-size: 16px;
+    padding: 12px 15px;
+    outline: none;
+
+    &:focus {
+      border: 1px solid variables.$blue-main;
+      box-shadow: 0 0 5px rgba(variables.$blue-main, 0.5); 
+    }
+  }
+
+  &__button {
+    background-color: variables.$blue-main;
+    border-radius: 12px;
+    color: variables.$white;
+    cursor: pointer;
+    font-size: 18px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    border: none;
+    transition: background-color 200ms ease-in-out, transform 150ms ease-out; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+
+    &:hover {
+      background-color: variables.$blue-main;
+      transform: translateY(
+        -2px
+      );
+    }
+
+    &:active {
+      transform: translateY(1px); 
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    }
+  }
+}

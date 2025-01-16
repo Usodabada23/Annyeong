@@ -1,60 +1,61 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anneyo Register</title>
+    <link href="./css/style.css" rel="stylesheet">
+    <title>Annyeong Register</title>
 </head>
 <body>
     <header class="header-container">
-        <h1 class="header-container__h1">Annyeong</h1>
+        <h1 class="header-container__h1">Annyeong<span>.</span></h1>
         <a href="/Annyeong/login.php" class="header-container__a">Login</a>
     </header>
-    <main class="main-container">
-        <h2 class="main-container__h2">Register</h2>
-        <form action="" method="post" class="main-container__form">
-            <div class="main-container__form--lastname">
-                <label for="lastname">Lastname</label>
-                <input type="text" name="lastname" />
-            </div>
-            <div class="main-container__form--firstname">
-                <label for="first">Firstname</label>
-                <input type="text" name="firstname" />
-            </div>
-            <div class="main-container__form--birthDate">
-                <label for="birthDate">Birth Date</label>
-                <input type="date" name="birthDate" />
-            </div>
-            <div class="main-container__form--email">
-                <label for="email">Email</label>
-                <input type="text" name="email" />
-            </div>
-            <div class="main-container__form--username">
-                <label for="username">Username</label>
-                <input type="text" name="username" />
-            </div>
-            <div class="main-container__form--password">
-                <label for="password">Password</label>
-                <input type="password" name="password" id="pwd"/>
-                <p id="error-message"></p> 
-            </div>
-            <div class="main-container__form--password">
-                <label for="confPassword">Confirm Password</label>
-                <input type="password" name="confPassword" id="confPwd"/>
-                <p id="confirm-error"></p> 
-            </div>
-            <div class="main-container__form--role">
-                <select for="role" name="role">
-                    <option value="client">Client</option>
-                    <option value="Provider">Provider</option>
-            </select>
-            </div>
-            <button type="submit" value="register">Register</button> 
-        </form>
+    <main>
+        <div class="main-container">
+            <h2 class="main-container__title">Register</h2>
+            <form action="" method="post" class="main-container__form">
+                <div class="main-container__field">
+                    <label for="lastname" class="main-container__label">Lastname</label>
+                    <input class="main-container__input" type="text" name="lastname" id="lastname" />
+                    <label for="firstname" class="main-container__label">Firstname</label>
+                    <input class="main-container__input" type="text" name="firstname" id="firstname" />
+                    <label for="birthDate" class="main-container__label">Birth Date</label>
+                    <input class="main-container__input" type="date" name="birthDate" id="birthDate" />
+                </div>
+                <div class="main-container__field">
+                    <label for="email" class="main-container__label">Email</label>
+                    <input class="main-container__input" type="email" name="email" id="email" />
+                </div>
+                <div class="main-container__field">
+                    <label for="username" class="main-container__label">Username</label>
+                    <input class="main-container__input" type="text" name="username" id="username" />
+                </div>
+                <div class="main-container__field">
+                    <label for="password" class="main-container__label">Password</label>
+                    <input class="main-container__input" type="password" name="password" id="pwd" />
+                    <p id="error-message"></p>
+                </div>
+                <div class="main-container__field">
+                    <label for="confPassword" class="main-container__label">Confirm Password</label>
+                    <input class="main-container__input" type="password" name="confPassword" id="confPwd" />
+                    <p id="confirm-error"></p>
+                </div>
+                <div class="main-container__field">
+                    <label for="role" class="main-container__label">Role</label>
+                    <select class="main-container__input" name="role" id="role">
+                        <option value="client">Client</option>
+                        <option value="provider">Provider</option>
+                    </select>
+                </div>
+                <button type="submit" class="main-container__button">Register</button>
+            </form>
+        </div>
     </main>
     <footer class="footer-container">
-       <h4 class="footer-container__h4">Annyeong</h4>
-       <p class="footer-container__p">&copy 2025.All rights reserved</p>
+        <h4 class="footer-container__h4">Annyeong</h4>
+        <p class="footer-container__p">&copy; 2025. All rights reserved</p>
     </footer>
     <script src="js/init.js"></script>
 </body>
