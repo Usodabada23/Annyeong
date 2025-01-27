@@ -19,16 +19,20 @@ $conn = connToDb();
     <title>Home</title>
 </head>
 <body>
-    <header class="header-container">
-        <h1 class="header-container__h1">Annyeong</h1>
-
-        <div class="header-container__right">
-            <a href="/Annyeong/profile.php" class="header-container__a">My Account</a>
-            <a href="/Annyeong/logout.php" class="header-container__a">Log out</a>
-        </div>
-    </header>
+    <?php
+    echo "<header class='annyeong-header'>";
+        echo "<h1 class='annyeong-header__h1'>Annyeong<span>.</span></h1>";
+        echo "<div class='annyeong-header__mid'>";
+            echo "<a class='annyeong-header__mid--services' href='/Annyeong/homeProvider.php'>Services</a>";
+        echo "</div>";
+        echo "<div class='annyeong-header__right'>";
+            echo "<a href='/Annyeong/profile.php' class='annyeong-header__right--button'>My Account</a>";
+            echo "<a href='/Annyeong/logout.php' class='annyeong-header__right--button'>Log out</a>";
+        echo "</div>";
+    echo "</header>";
+    ?>
     <main>
-        <h2>Hello,  <?php echo $_SESSION["username"];?></h2>
+        <h2 class="hello-username">Hello,  <?php echo $_SESSION["username"];?></h2>
         <h3>Our Services</h3> 
         <section class="homeProvider-container">
         <?php
@@ -47,9 +51,10 @@ $conn = connToDb();
         ?>
         </section>
     </main>
-    <footer class="footer-container">
-       <h4 class="footer-container__h4">Annyeong</h4>
-       <p class="footer-container__p">&copy 2025.All rights reserved</p>
+    <footer class="annyeong-footer">
+       <h4 class="annyeong-footer__h4">Annyeong</h4>
+       <p class="annyeong-footer__p">&copy 2025.All rights reserved</p>
+    </footer>
 </body>
 </html>
 <?php
