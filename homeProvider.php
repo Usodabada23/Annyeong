@@ -57,4 +57,3 @@ $conn = connToDb();
     </footer>
 </body>
 </html>
-<?php
