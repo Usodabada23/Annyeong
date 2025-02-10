@@ -21,13 +21,14 @@ class LoginController{
                 $_SESSION['username'] = $user['username'];
                 $_SESSION['role'] = $user["role"];
                 if($user["role"]=== "client"){
-                    require "View/homeClient.php";
+                    header("Location: http://localhost/Annyeong/index.php?page=homeClient");
                 }else{
-                    require "View/homeProvider.php";
+                    header("Location: http://localhost/Annyeong/index.php?page=homeProvider");
                 }     
             }else{
+                sleep(2);
                 echo "invalid password or username";
-                header("Location: /Annyeong/View/loginView.php?error=invalid_credentials");
+                header("Location: http://localhost/Annyeong/index.php?page=login&error=invalid_credentials");
                 exit();
             }
         }

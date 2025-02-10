@@ -13,7 +13,7 @@ if (!isset($_SESSION["user_id"])){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="/public/css/style.css" rel="stylesheet">
+    <link href="http://localhost/Annyeong/public/css/style.css" rel="stylesheet">
     <title>Home</title>
 </head>
 <body>

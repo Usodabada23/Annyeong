@@ -13,7 +13,7 @@ if (!isset($_SESSION["user_id"])){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="/public/css/style.css" rel="stylesheet">
+    <link href="http://localhost/Annyeong/public/css/style.css" rel="stylesheet">
     <title>Home</title>
 </head>
 <body>
@@ -34,8 +34,7 @@ if (!isset($_SESSION["user_id"])){
         <h3>Our Services</h3> 
         <section class="homeProvider-container">
         <?php
-            try{
-                $services = $conn->query("SELECT * FROM services")->fetchAll();
+            if($services){
                 foreach($services as $service){
                     echo "<article class='homeProvider-container__card'>";
                     echo "<h4 class='homeProvider-container__card--h4'>" . $service["name"] . "</h4>";
@@ -43,8 +42,9 @@ if (!isset($_SESSION["user_id"])){
                     echo "<p class='homeProvider-container__card--price'>~" . $service["price"] . "$</p>";
                     echo "</article>";
                 }
-            }catch(Exception $e){
-                $e->getMessage();
+            }
+            else {
+                echo "<p>Aucun service trouvé</p>";
             }
         ?>
         </section>

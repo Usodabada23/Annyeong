@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="/public/css/style.css" rel="stylesheet">
+    <link href="http://localhost/Annyeong/public/css/style.css" rel="stylesheet">
     <title>Annyeong Register</title>
 </head>
 <body>
@@ -20,28 +20,28 @@
             <form action="" method="post" class="main-container__form">
                 <div class="register-container__form--info">
                     <label for="lastname" >Lastname</label>
-                    <input  type="text" name="lastname" id="lastname" />
+                    <input  type="text" name="lastname" id="lastname" required />
                     <label for="firstname" >Firstname</label>
-                    <input  type="text" name="firstname" id="firstname" />
+                    <input  type="text" name="firstname" id="firstname" required/>
                     <label for="birthDate" >Birth Date</label>
-                    <input  type="date" name="birthDate" id="birthDate" />
+                    <input  type="date" name="birthDate" id="birthDate" required/>
                 </div>
                 <div class="register-container__form--email">
                     <label for="email">Email</label>
-                    <input  type="email" name="email" id="email" />
+                    <input  type="email" name="email" id="email" required/>
                 </div>
                 <div class="register-container__form--username">
                     <label for="username">Username</label>
-                    <input  type="text" name="username" id="username" />
+                    <input  type="text" name="username" id="username" required />
                 </div>
                 <div class="register-container__form--password">
                     <label for="password" >Password</label>
-                    <input  type="password" name="password" id="pwd" />
+                    <input  type="password" name="password" id="pwd" required/>
                     <p id="error-message"></p>
                 </div>
                 <div class="register-container__form--confpwd">
                     <label for="confPassword">Confirm Password</label>
-                    <input type="password" name="confPassword" id="confPwd" />
+                    <input type="password" name="confPassword" id="confPwd" required/>
                     <p id="confirm-error"></p>
                 </div>
                 <div class="register-container__form--role">
