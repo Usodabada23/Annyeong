@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="./css/style.css" rel="stylesheet">
+    <link href="/public/css/style.css" rel="stylesheet">
     <title>Anneyo Login</title>
 </head>
 <body>
     <header class="annyeong-header">
         <h1 class="annyeong-header__h1">Annyeong<span>.<span></h1>
         <div class="annyeong-header__right">
-            <a href="registerView.php" class="annyeong-header__right--button">Register</a>
+            <a href="http://localhost/Annyeong/index.php?page=register" class="annyeong-header__right--button">Register</a>
         </div>
     </header>
     <main class="login-container">

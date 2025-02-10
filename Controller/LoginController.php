@@ -8,7 +8,6 @@ class LoginController{
     }
 
     public function login(){
-
         if(isset($_POST["username"]) && isset($_POST["password"])){
             $username = $_POST["username"];
             $pwd = $_POST["password"];
@@ -22,11 +21,9 @@ class LoginController{
                 $_SESSION['username'] = $user['username'];
                 $_SESSION['role'] = $user["role"];
                 if($user["role"]=== "client"){
-                    header("Location: /Annyeong/View/homeClient.php");
-                    exit;
+                    require "View/homeClient.php";
                 }else{
-                    header("Location: /Annyeong/View/homeProvider.php");
-                    exit; 
+                    require "View/homeProvider.php";
                 }     
             }else{
                 echo "invalid password or username";

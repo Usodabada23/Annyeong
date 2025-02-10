@@ -4,18 +4,16 @@ if (session_status() !== PHP_SESSION_ACTIVE){
 	
 }
 if (!isset($_SESSION["user_id"])){
-	header("Location: /Annyeong/login.php");
+	header("Location: View/loginView.php");
 	exit();
 }
-require_once 'init_database.php';
-$conn = connToDb();
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="./css/style.css" rel="stylesheet">
+    <link href="/public/css/style.css" rel="stylesheet">
     <title>Home</title>
 </head>
 <body>

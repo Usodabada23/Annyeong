@@ -23,4 +23,8 @@ switch($page){
         break;
     case 'register':
         (new RegisterController())->registerView();
+        break;
+    default:
+        (new LoginController())->loginView();
+        break;
 }

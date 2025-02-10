@@ -4,14 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="./css/style.css" rel="stylesheet">
+    <link href="/public/css/style.css" rel="stylesheet">
     <title>Annyeong Register</title>
 </head>
 <body>
 <header class="annyeong-header">
         <h1 class="annyeong-header__h1">Annyeong<span>.<span></h1>
         <div class="annyeong-header__right">
-            <a href="loginView.php" class="annyeong-header__right--button">Login</a>
+            <a href="http://localhost/Annyeong/index.php?page=login" class="annyeong-header__right--button">Login</a>
         </div>
     </header>
     <main>
@@ -59,6 +59,6 @@
        <h4 class="annyeong-footer__h4">Annyeong</h4>
        <p class="annyeong-footer__p">&copy 2025.All rights reserved</p>
     </footer>
-    <script src="public/js/init.js"></script>
+    <script src="../public/js/init.js"></script>
 </body>
 </html>
