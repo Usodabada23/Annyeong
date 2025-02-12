@@ -4,30 +4,29 @@ if (session_status() !== PHP_SESSION_ACTIVE){
 	
 }
 if (!isset($_SESSION["user_id"])){
-	header("Location: /Annyeong/login.php");
+	header("Location: http://localhost/Annyeong/index.php?page=login");
 	exit();
 }
-require_once 'init_database.php';
-$conn = connToDb();
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="./css/style.css" rel="stylesheet">
-    <title>Home</title>
+    <link href="http://localhost/Annyeong/public/css/style.css" rel="stylesheet">
+    <title>Annyeong - Home</title>
 </head>
 <body>
     <?php
     echo "<header class='annyeong-header'>";
         echo "<h1 class='annyeong-header__h1'>Annyeong<span>.</span></h1>";
         echo "<div class='annyeong-header__mid'>";
-            echo "<a class='annyeong-header__mid--services' href='/Annyeong/homeProvider.php'>Services</a>";
+            echo "<a  href='http://localhost/Annyeong/index.php?page=addRequirement'>What do you need ?</a>";
+            echo "<a href='http://localhost/Annyeong/index.php?page=allRequirement'>Ongoing requests</a>";
         echo "</div>";
         echo "<div class='annyeong-header__right'>";
-            echo "<a href='/Annyeong/profile.php' class='annyeong-header__right--button'>My Account</a>";
-            echo "<a href='/Annyeong/logout.php' class='annyeong-header__right--button'>Log out</a>";
+            echo "<a href='http://localhost/Annyeong/index.php?page=profileProvider' class='annyeong-header__right--button'>My Account</a>";
+            echo "<a href='http://localhost/Annyeong/index.php?page=login' class='annyeong-header__right--button'>Log out</a>";
         echo "</div>";
     echo "</header>";
     ?>
@@ -36,8 +35,7 @@ $conn = connToDb();
         <h3>Our Services</h3> 
         <section class="homeProvider-container">
         <?php
-            try{
-                $services = $conn->query("SELECT * FROM services")->fetchAll();
+            if($services){
                 foreach($services as $service){
                     echo "<article class='homeProvider-container__card'>";
                     echo "<h4 class='homeProvider-container__card--h4'>" . $service["name"] . "</h4>";
@@ -45,8 +43,9 @@ $conn = connToDb();
                     echo "<p class='homeProvider-container__card--price'>~" . $service["price"] . "$</p>";
                     echo "</article>";
                 }
-            }catch(Exception $e){
-                $e->getMessage();
+            }
+            else {
+                echo "<p>Aucun service trouvé</p>";
             }
         ?>
         </section>
