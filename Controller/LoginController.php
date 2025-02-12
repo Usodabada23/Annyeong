@@ -21,7 +21,7 @@ class LoginController{
                 $_SESSION['user_id'] = $user['id'];
                 $_SESSION['username'] = $user['username'];
                 $_SESSION['role'] = $user["role"];
-                if($user["role"]=== "client"){
+                if($user["role"] === "client"){
                     header("Location: http://localhost/Annyeong/index.php?page=homeClient");
                 }else{
                     header("Location: http://localhost/Annyeong/index.php?page=homeProvider");
