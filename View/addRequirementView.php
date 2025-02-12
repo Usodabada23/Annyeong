@@ -36,12 +36,22 @@ if (!isset($_SESSION["user_id"])){
             ?>
             <form method="post">
             <div>
-                <label for="chooseProvider">Choose a provider</label>
-                <select name="provider" id="chooseProvider">
+                <!---<label for="chooseProvider">Choose a provider</label>--->
+                <select name="chooseProvider" id="chooseProvider">
                     <option value="">--- Choose a provider ---</option>
                     <?php
                         foreach($providers as $provider){
                             echo "<option value='". $provider["id"] ."'>".$provider["lastname"]." ".$provider["firstname"]."</option>";
+                        }
+                    ?>
+                </select>
+            </div>
+            <div>
+            <select name="chooseService" id="chooseService">
+                    <option value="">--- Choose a service ---</option>
+                    <?php
+                        foreach($services as $service){
+                            echo "<option value='". $service["id"] ."'>".$service["name"]." - ".$service["price"]." $</option>";
                         }
                     ?>
                 </select>
