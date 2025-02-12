@@ -17,38 +17,20 @@ if (!isset($_SESSION["user_id"])){
     <title>Annyeong - Home</title>
 </head>
 <body>
-    <?php
-    echo "<header class='annyeong-header'>";
-        echo "<h1 class='annyeong-header__h1'>Annyeong<span>.</span></h1>";
-        echo "<div class='annyeong-header__mid'>";
-            echo "<a  href='http://localhost/Annyeong/index.php?page=addRequirement'>What do you need ?</a>";
-            echo "<a href='http://localhost/Annyeong/index.php?page=allRequirement'>Ongoing requests</a>";
-        echo "</div>";
-        echo "<div class='annyeong-header__right'>";
-            echo "<a href='http://localhost/Annyeong/index.php?page=profileProvider' class='annyeong-header__right--button'>My Account</a>";
-            echo "<a href='http://localhost/Annyeong/index.php?page=login' class='annyeong-header__right--button'>Log out</a>";
-        echo "</div>";
-    echo "</header>";
-    ?>
-    <main>
-        <h2 class="hello-username">Hello,  <?php echo $_SESSION["username"];?></h2>
-        <h3>Our Services</h3> 
-        <section class="homeProvider-container">
-        <?php
-            if($services){
-                foreach($services as $service){
-                    echo "<article class='homeProvider-container__card'>";
-                    echo "<h4 class='homeProvider-container__card--h4'>" . $service["name"] . "</h4>";
-                    echo "<p class='homeProvider-container__card--description'>" . $service["description"] . "</p>";
-                    echo "<p class='homeProvider-container__card--price'>~" . $service["price"] . "$</p>";
-                    echo "</article>";
-                }
-            }
-            else {
-                echo "<p>Aucun service trouvé</p>";
-            }
-        ?>
-        </section>
+<header class="annyeong-header">
+        <h1 class="annyeong-header__h1">Annyeong<span>.</span></h1>
+        <div class="annyeong-header__mid">
+        <a class="annyeong-header__mid--services" href="http://localhost/Annyeong/index.php?page=request">Do I have any requests ?</a>
+        </div>
+        <div class="annyeong-header__right">
+            <a href="http://localhost/Annyeong/index.php?page=profileProvider" class="annyeong-header__right--button">My Account</a>
+            <a href="http://localhost/Annyeong/index.php?page=login" class="annyeong-header__right--button">Log out</a>
+        </div>
+    </header>
+    <main class="main-container">
+        <h2 class="main-container__h2">Hello,  <?php echo $_SESSION["username"];?></h2>
+        <h3>Informations</h3>
+        <p>Role : <?php echo $_SESSION["role"];?></p>
     </main>
     <footer class="annyeong-footer">
        <h4 class="annyeong-footer__h4">Annyeong</h4>
@@ -56,3 +38,4 @@ if (!isset($_SESSION["user_id"])){
     </footer>
 </body>
 </html>
+<?php

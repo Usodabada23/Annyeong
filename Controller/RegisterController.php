@@ -33,7 +33,7 @@ class RegisterController{
 
             $newUser->addUser();
             sleep(2);
-            header("Location: View/loginView.php");
+            header("Location: http://localhost/Annyeong/index.php?page=login");
             exit(); 
         }
     }

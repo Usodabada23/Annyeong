@@ -1,4 +1,6 @@
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 if (session_status() !== PHP_SESSION_ACTIVE){
 	session_start();
 	
@@ -14,14 +16,13 @@ if (!isset($_SESSION["user_id"])){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="http://localhost/Annyeong/public/css/style.css" rel="stylesheet">
-    <title>we miss you <?php echo $_SESSION["username"]; ?></title>
+    <title>Annyeaong - Add a requirement</title>
 </head>
 <body>
 <header class="annyeong-header">
         <h1 class="annyeong-header__h1">Annyeong<span>.</span></h1>
         <div class="annyeong-header__mid">
             <a href="http://localhost/Annyeong/index.php?page=homeClient" class="annyeong-header__right--button">Home</a>
-            <a  href="http://localhost/Annyeong/index.php?page=addRequirement">What do you need ?</a>
             <a href="http://localhost/Annyeong/index.php?page=allRequirement">Ongoing requests</a>
             <a href='http://localhost/Annyeong/index.php?page=comments'>Your comments</a>
         </div>
@@ -30,14 +31,30 @@ if (!isset($_SESSION["user_id"])){
         </div>
     </header>
     <main class="main-container">
-        <h2 class="main-container__h2">My Account</h2>
-        <h3><?php echo $user["role"];?> informations</h3>
-        <p>Lastname : <?php echo $user["lastname"];?></p>
-        <p>Firstname : <?php echo $user["firstname"];?></p>
-        <p>Username : <?php echo $user["username"];?></p>
-        <p>Email : <?php echo $user["email"];?></p>
-        <p>Birth date : <?php echo $user["birthDate"];?></p>
-        <p>Your Account has been created at : <?php echo $user["created_at"];?></p>
+        
+        <?php if ($providers){
+            ?>
+            <form method="post">
+            <div>
+                <label for="chooseProvider">Choose a provider</label>
+                <select name="provider" id="chooseProvider">
+                    <option value="">--- Choose a provider ---</option>
+                    <?php
+                        foreach($providers as $provider){
+                            echo "<option value='". $provider["id"] ."'>".$provider["lastname"]." ".$provider["firstname"]."</option>";
+                        }
+                    ?>
+                </select>
+            </div>
+            <input type="submit" value="Add a requirement"/>
+            </form>
+        <?php
+        } else{
+        ?>
+            <p>Providers not found</p>
+        <?php  
+        }
+        ?>
     </main>
     <footer class="annyeong-footer">
        <h4 class="annyeong-footer__h4">Annyeong</h4>
@@ -45,3 +62,4 @@ if (!isset($_SESSION["user_id"])){
     </footer>
 </body>
 </html>
+<?php

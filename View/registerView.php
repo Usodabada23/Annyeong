@@ -59,6 +59,6 @@
        <h4 class="annyeong-footer__h4">Annyeong</h4>
        <p class="annyeong-footer__p">&copy 2025.All rights reserved</p>
     </footer>
-    <script src="../public/js/init.js"></script>
+    <script src="public/js/init.js" defer></script>
 </body>
 </html>

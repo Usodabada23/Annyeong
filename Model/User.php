@@ -104,6 +104,23 @@ class User{
         }
     }
 
+    public static function getUserByRole(string $role){
+        try {
+            $db = new Database();
+            $stmt = $db->getDb()->prepare("SELECT * FROM users WHERE role=?");
+            $stmt->execute([$role]); 
+            $user = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            if($user){
+                return $user;
+            }else{
+                return [];
+            }
+        }catch(Exception $e){
+            echo  $e->getMessage();
+
+        }
+    }
+
 
     
 }
