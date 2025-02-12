@@ -1,11 +1,11 @@
-# 👋 Anneyeong - Services à domicile simplifiés
+# 👋 Annyeong - Services à domicile simplifiés
 
-**Anneyeong** est une application mobile conçue pour simplifier la vie quotidienne en mettant en relation les utilisateurs avec des prestataires locaux pour diverses tâches domestiques. Grâce à une interface intuitive et une approche moderne, **Anneyeong** facilite l'accès à des services rapides, pratiques et fiables.
+**Annyeong** est une application mobile conçue pour simplifier la vie quotidienne en mettant en relation les utilisateurs avec des prestataires locaux pour diverses tâches domestiques. Grâce à une interface intuitive et une approche moderne, **Annyeong** facilite l'accès à des services rapides, pratiques et fiables.
 
 ---
 
 ## 📋 Services proposés
-**Anneyeong** offre une gamme variée de services pour répondre à vos besoins, notamment :
+**Annyeong** offre une gamme variée de services pour répondre à vos besoins, notamment :
 - **Ménage à domicile** : Réservez des prestataires pour vos tâches de nettoyage.
 - **Lessive et repassage** : Faites laver et repasser vos vêtements directement chez vous.
 - **Réparation et maintenance** : Plomberie, électricité, ou réparations de petits appareils.
@@ -31,12 +31,12 @@ et encore d'autres services ...
 ---
 
 ## 🌏 Contexte
-Avec une urbanisation élevée et un rythme de vie rapide, **Anneyeong** répond aux besoins d'une société moderne en proposant des services domestiques pratiques et fiables, accessibles directement depuis votre téléphone.
+Avec une urbanisation élevée et un rythme de vie rapide, **Annyeong** répond aux besoins d'une société moderne en proposant des services domestiques pratiques et fiables, accessibles directement depuis votre téléphone.
 
 ---
 
 ## 📌 Conclusion
-**Anneyeong** transforme les tâches domestiques en une expérience simple et agréable. Grâce à sa flexibilité, sa qualité et sa facilité d'utilisation, l'application s'impose comme une solution incontournable pour un quotidien allégé.
+**Annyeong** transforme les tâches domestiques en une expérience simple et agréable. Grâce à sa flexibilité, sa qualité et sa facilité d'utilisation, l'application s'impose comme une solution incontournable pour un quotidien allégé.
 
 ---
 
