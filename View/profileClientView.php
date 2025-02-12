@@ -23,14 +23,19 @@ if (!isset($_SESSION["user_id"])){
             <a class="annyeong-header__mid--services" href="/Annyeong/homeProvider.php">Requests</a>
         </div>
         <div class="annyeong-header__right">
-            <a href="http://localhost/Annyeong/index.php?page=profileClient" class="annyeong-header__right--button">My Account</a>
+            <a href="http://localhost/Annyeong/index.php?page=homeClient" class="annyeong-header__right--button">Home</a>
             <a href="http://localhost/Annyeong/index.php?page=login" class="annyeong-header__right--button">Log out</a>
         </div>
     </header>
     <main class="main-container">
-        <h2 class="main-container__h2">Hello,  <?php echo $_SESSION["username"];?></h2>
+        <h2 class="main-container__h2">My Account</h2>
         <h3>Informations</h3>
-        <p>Role : <?php echo $_SESSION["role"];?></p>
+        <p>Lastname : <?php echo $user["lastname"];?></p>
+        <p>Firstname : <?php echo $user["firstname"];?></p>
+        <p>Username : <?php echo $user["username"];?></p>
+        <p>Email : <?php echo $user["email"];?></p>
+        <p>Birth date : <?php echo $user["birthDate"];?></p>
+        <p>Your Account has been created at : <?php echo $user["created_at"];?></p>
     </main>
     <footer class="annyeong-footer">
        <h4 class="annyeong-footer__h4">Annyeong</h4>

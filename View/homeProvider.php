@@ -4,7 +4,7 @@ if (session_status() !== PHP_SESSION_ACTIVE){
 	
 }
 if (!isset($_SESSION["user_id"])){
-	header("Location: View/loginView.php");
+	header("Location: http://localhost/Annyeong/index.php?page=login");
 	exit();
 }
 ?>

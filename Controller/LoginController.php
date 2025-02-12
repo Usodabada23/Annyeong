@@ -3,6 +3,7 @@
 class LoginController{
 
     public function loginView(){
+        $this->logout();
         $this->login();
         require "View/loginView.php";
     }
@@ -43,6 +44,6 @@ class LoginController{
         session_destroy ();
 
         // On redirige le visiteur vers la page d'accueil
-        header ('Location: /Annyeong/login.php');
+        //header ('Location: http://localhost/Annyeong/index.php?page=login');
     }
 }
