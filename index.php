@@ -14,6 +14,7 @@ require 'Controller/RegisterController.php';
 require 'Controller/HomeProviderController.php';
 require 'Controller/HomeClientController.php';
 require 'Controller/ProfileClientController.php';
+require 'Controller/ProfileProviderController.php';
 // Get the current page to load
 // If nothing is specified, it will remain empty (home should be loaded)
 $page = $_GET['page'] ?? null;
@@ -37,6 +38,9 @@ switch($page){
 
     case 'profileClient':
         (new ProfileClientController())->profileView();
+        break;
+    case 'profileProvider':
+        (new ProfileProviderController())->profileView();
         break;
     default:
         if(!isset($_SESSION["user_id"])){

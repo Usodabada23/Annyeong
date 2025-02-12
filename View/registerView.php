@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="http://localhost/Annyeong/public/css/style.css" rel="stylesheet">
-    <title>Annyeong Register</title>
+    <title>Annyeong - Register</title>
 </head>
 <body>
 <header class="annyeong-header">

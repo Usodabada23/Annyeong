@@ -20,8 +20,9 @@ if (!isset($_SESSION["user_id"])){
 <header class="annyeong-header">
         <h1 class="annyeong-header__h1">Annyeong<span>.</span></h1>
         <div class="annyeong-header__mid">
-        <a href="http://localhost/Annyeong/index.php?page=homeClient" class="annyeong-header__right--button">Home</a>
-        <a class="annyeong-header__mid--services" href="http://localhost/Annyeong/index.php?page=request">Do I have any requests ?</a>
+            <a href="http://localhost/Annyeong/index.php?page=homeProvider" class="annyeong-header__right--button">Home</a>
+            <a  href="http://localhost/Annyeong/index.php?page=addRequirement">What do you need ?</a>
+            <a href="http://localhost/Annyeong/index.php?page=allRequirement">Ongoing requests</a>
         </div>
         <div class="annyeong-header__right">
             <a href="http://localhost/Annyeong/index.php?page=login" class="annyeong-header__right--button">Log out</a>
@@ -29,7 +30,7 @@ if (!isset($_SESSION["user_id"])){
     </header>
     <main class="main-container">
         <h2 class="main-container__h2">My Account</h2>
-        <h3>Client informations</h3>
+        <h3>Provider informations</h3>
         <p>Lastname : <?php echo $user["lastname"];?></p>
         <p>Firstname : <?php echo $user["firstname"];?></p>
         <p>Username : <?php echo $user["username"];?></p>

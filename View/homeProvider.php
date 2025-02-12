@@ -14,18 +14,19 @@ if (!isset($_SESSION["user_id"])){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="http://localhost/Annyeong/public/css/style.css" rel="stylesheet">
-    <title>Home</title>
+    <title>Annyeong - Home</title>
 </head>
 <body>
     <?php
     echo "<header class='annyeong-header'>";
         echo "<h1 class='annyeong-header__h1'>Annyeong<span>.</span></h1>";
         echo "<div class='annyeong-header__mid'>";
-            echo "<a class='annyeong-header__mid--services' href='/Annyeong/homeProvider.php'>Services</a>";
+            echo "<a  href='http://localhost/Annyeong/index.php?page=addRequirement'>What do you need ?</a>";
+            echo "<a href='http://localhost/Annyeong/index.php?page=allRequirement'>Ongoing requests</a>";
         echo "</div>";
         echo "<div class='annyeong-header__right'>";
-            echo "<a href='/Annyeong/profile.php' class='annyeong-header__right--button'>My Account</a>";
-            echo "<a href='/Annyeong/logout.php' class='annyeong-header__right--button'>Log out</a>";
+            echo "<a href='http://localhost/Annyeong/index.php?page=profileProvider' class='annyeong-header__right--button'>My Account</a>";
+            echo "<a href='http://localhost/Annyeong/index.php?page=login' class='annyeong-header__right--button'>Log out</a>";
         echo "</div>";
     echo "</header>";
     ?>
