@@ -32,7 +32,7 @@ if (!isset($_SESSION["user_id"])){
     </header>
     <main class="main-container">
         
-        <?php if ($providers){
+        <?php if ($providers && $services){
             ?>
             <form method="post">
             <div>
@@ -41,7 +41,7 @@ if (!isset($_SESSION["user_id"])){
                     <option value="">--- Choose a provider ---</option>
                     <?php
                         foreach($providers as $provider){
-                            echo "<option value='". $provider["id"] ."'>".$provider["lastname"]." ".$provider["firstname"]."</option>";
+                            echo "<option value='". $provider["id"] ."'required>".$provider["lastname"]." ".$provider["firstname"]."</option>";
                         }
                     ?>
                 </select>
@@ -51,10 +51,26 @@ if (!isset($_SESSION["user_id"])){
                     <option value="">--- Choose a service ---</option>
                     <?php
                         foreach($services as $service){
-                            echo "<option value='". $service["id"] ."'>".$service["name"]." - ".$service["price"]." $</option>";
+                            echo "<option value='". $service["id"] ."' required>".$service["name"]." - ".$service["price"]." $</option>";
                         }
                     ?>
                 </select>
+            </div>
+            <div>
+                <label for="location">Where ?</label>
+                <input type="text" id="location" name="location" required/>  
+            </div>
+            <div>
+                <label for="meeting-time">Best date for you ?</label>
+                <input type="date" id="date-input" name="dateRequirement" required/>  
+            </div>
+            <div>
+                <label>You preferred ?</label>
+                <input type="radio" id="morning" value="Morning" name="preference" />
+                <label for="morning">Morning</label>
+                
+                <input type="radio" id="afternoon" value="Afternoon" name="preference" />
+                <label for="afternoon">Afternoon</label>
             </div>
             <input type="submit" value="Add a requirement"/>
             </form>
