@@ -32,7 +32,7 @@ if (!isset($_SESSION["user_id"])){
     </header>
     <main class="main-container">
         
-        <?php if ($providers){
+        <?php if ($providers && $services){
             ?>
             <form method="post">
             <div>
@@ -57,11 +57,15 @@ if (!isset($_SESSION["user_id"])){
                 </select>
             </div>
             <div>
-                <label for="meeting-time">Best date for you ?</label>
-                <input type="date" id="date-input" required/>  
+                <label for="location">Where ?</label>
+                <input type="text" id="location" name="location" required/>  
             </div>
             <div>
-                <label>You preferred?</label>
+                <label for="meeting-time">Best date for you ?</label>
+                <input type="date" id="date-input" name="dateRequirement" required/>  
+            </div>
+            <div>
+                <label>You preferred ?</label>
                 <input type="radio" id="morning" value="Morning" name="preference" />
                 <label for="morning">Morning</label>
                 

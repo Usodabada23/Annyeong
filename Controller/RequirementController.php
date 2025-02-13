@@ -14,4 +14,12 @@ class RequirementController{
     public function getServices(){
         return Service::getServices();
     }
+
+    public function submitARequirement(){
+        if(isset($_POST["chooseProvider"]) && isset($_POST["chooseService"]) && 
+        isset($_POST["location"]) && isset($_POST["dateRequirement"]) && isset($_POST["preference"])){
+            
+
+        }
+    }
 }
