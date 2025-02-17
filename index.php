@@ -8,6 +8,7 @@ error_reporting(E_ALL);
 //include all your model files here
 require 'Model/User.php';
 require 'Model/Service.php';
+require 'Model/Requirement.php';
 //include all your controllers here
 require 'Controller/LoginController.php';
 require 'Controller/RegisterController.php';
