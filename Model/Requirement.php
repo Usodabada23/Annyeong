@@ -31,7 +31,20 @@ class Requirement{
         }
     }
 
-    public static function seeRequirementByClient(int $client_id){
+    public static function seeRequirementsByClient(int $client_id){
+        try {
+            $db = new Database();
+            $stmt = $db->getDb()->prepare("SELECT * FROM requirements WHERE client_id=?");
+            $stmt->execute([$client_id]); 
+            $requirement = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            if($requirement){
+                return $requirement;
+            }else{
+                return "Requirements doesn't exist !";
+            }
+        }catch(Exception $e){
+            echo  $e->getMessage();
 
+        }
     }
 }

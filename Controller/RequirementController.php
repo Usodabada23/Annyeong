@@ -9,6 +9,12 @@ class RequirementController{
         require "View/addRequirementView.php";
     }
 
+    public function seeRequirements(){
+        $requirements = $this->seeAllRequirements();
+
+        require "View/seeAllRequirementsView.php";
+    }
+
     public function getProviders(){
         return User::getUserByRole("provider");
     }
@@ -35,5 +41,16 @@ class RequirementController{
             $newRequirement->addNewRequirement();
 
         }
+    }
+
+    public function seeAllRequirements(){
+        session_start();
+        if(isset($_SESSION["user_id"])){
+            $id = $_SESSION["user_id"];
+            return Requirement::seeRequirementsByClient($id);   
+        }else{
+            header("Location: http://localhost/Annyeong/index.php?page=login");
+        }
+        
     }
 }

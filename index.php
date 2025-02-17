@@ -47,6 +47,9 @@ switch($page){
     case 'addRequirement':
         (new RequirementController())->addRequirement();
         break;
+    case 'allRequirement':
+        (new RequirementController())->seeRequirements();
+        break;
     default:
         if(!isset($_SESSION["user_id"])){
             (new LoginController())->loginView();
