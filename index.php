@@ -8,6 +8,7 @@ error_reporting(E_ALL);
 //include all your model files here
 require 'Model/User.php';
 require 'Model/Service.php';
+require 'Model/Requirement.php';
 //include all your controllers here
 require 'Controller/LoginController.php';
 require 'Controller/RegisterController.php';
@@ -45,6 +46,9 @@ switch($page){
         break;
     case 'addRequirement':
         (new RequirementController())->addRequirement();
+        break;
+    case 'allRequirement':
+        (new RequirementController())->seeRequirements();
         break;
     default:
         if(!isset($_SESSION["user_id"])){
