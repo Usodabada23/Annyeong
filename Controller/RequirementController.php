@@ -15,12 +15,72 @@ class RequirementController{
         require "View/seeAllRequirementsView.php";
     }
 
+    public function seeInfoByRequirements() {
+        if (!isset($_GET["number"])) {
+            echo "Invalid request!";
+            return;
+        }
+    
+        $details = $this->getDetailsOfRequirement();
+    
+        if ($details) {
+            require "View/seeDetailsOfRequirementView.php";
+        }
+    }
+    
+
     public function getProviders(){
         return User::getUserByRole("provider");
     }
     public function getServices(){
         return Service::getServices();
     }
+
+    public function getDetailsOfRequirement() {
+        if (session_status() === PHP_SESSION_NONE) {
+            session_start();
+        }
+    
+        if (!isset($_SESSION["user_id"]) || !isset($_GET["number"])) {
+            echo "Requirement details not found!";
+            return null;
+        }
+    
+        $client_id = $_SESSION["user_id"];
+        $i = intval($_GET["number"])-1;
+    
+        // Fetch requirements
+        $requirements = Requirement::seeRequirementsByClient($client_id);
+    
+        // Validate index exists
+        if (!isset($requirements[$i])) {
+            echo "Requirement not found!";
+            return null;
+        }
+    
+        $firstReq = $requirements[$i];
+    
+        // Ensure required keys exist
+        if (!isset($firstReq["service_id"]) || !isset($firstReq["provider_id"])) {
+            echo "Requirement details are incomplete!";
+            return null;
+        }
+        $service = Service::getInfosById($firstReq["service_id"]);
+        $provider = User::getInfosById($firstReq["provider_id"]);
+    
+        $details = [
+            "serviceDetail" => $service["name"]." will cost you ".$service["price"]."$",
+            "providerDetail" => $provider["email"],
+            "location" => $firstReq["location"],
+            "date" => $firstReq["date"],
+            "preference" => $firstReq["preference"],
+            "updated_at" => $firstReq["updated_at"],
+            "created_at" => $firstReq["created_at"]
+        ];
+    
+        return $details;
+    }
+    
 
     public function submitARequirement(){
         session_start();
