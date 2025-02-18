@@ -120,6 +120,22 @@ class User{
 
         }
     }
+    public static function getInfosById(int $id){
+        try {
+            $db = new Database();
+            $stmt = $db->getDb()->prepare("SELECT * FROM users WHERE id=?");
+            $stmt->execute([$id]); 
+            $user = $stmt->fetch(PDO::FETCH_ASSOC);
+            if($user){
+                return $user;
+            }else{
+                return "username doesn't exist !";
+            }
+        }catch(Exception $e){
+            echo  $e->getMessage();
+
+        }
+    }
 
 
     
