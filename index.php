@@ -17,6 +17,7 @@ require 'Controller/HomeClientController.php';
 require 'Controller/ProfileClientController.php';
 require 'Controller/ProfileProviderController.php';
 require 'Controller/RequirementController.php';
+require 'Controller/RequestController.php';
 // Get the current page to load
 // If nothing is specified, it will remain empty (home should be loaded)
 $page = $_GET['page'] ?? null;
@@ -30,19 +31,22 @@ switch($page){
     case 'register':
         (new RegisterController())->registerView();
         break;
+    //Provider side
     case 'homeProvider':
         (new HomeProviderController())->homeProvider();
         break;
-
+    case 'profileProvider':
+        (new ProfileProviderController())->profileView();
+        break;
+    case 'requests':
+        (new RequestController())->providerRequests();
+        break;
+    //Client side
     case 'homeClient':
         (new HomeClientController())->homeClient();
         break;
-
     case 'profileClient':
         (new ProfileClientController())->profileView();
-        break;
-    case 'profileProvider':
-        (new ProfileProviderController())->profileView();
         break;
     case 'addRequirement':
         (new RequirementController())->addRequirement();
