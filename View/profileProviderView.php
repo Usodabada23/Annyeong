@@ -21,7 +21,7 @@ if (!isset($_SESSION["user_id"])){
         <h1 class="annyeong-header__h1">Annyeong<span>.</span></h1>
         <div class="annyeong-header__mid">
         <a href="http://localhost/Annyeong/index.php?page=homeProvider" class="annyeong-header__right--button">Home</a>
-        <a class="annyeong-header__mid--services" href="http://localhost/Annyeong/index.php?page=request">Do I have any requests ?</a>
+        <a class="annyeong-header__mid--services" href="http://localhost/Annyeong/index.php?page=requests">Do I have any requests ?</a>
         </div>
         <div class="annyeong-header__right">
             <a href="http://localhost/Annyeong/index.php?page=login" class="annyeong-header__right--button">Log out</a>

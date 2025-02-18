@@ -47,4 +47,21 @@ class Requirement{
 
         }
     }
+
+    public static function seeRequestsByProvider(int $provider_id){
+        try {
+            $db = new Database();
+            $stmt = $db->getDb()->prepare("SELECT * FROM requirements WHERE provider_id=?");
+            $stmt->execute([$provider_id]); 
+            $requirement = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            if($requirement){
+                return $requirement;
+            }else{
+                return "Requirements doesn't exist !";
+            }
+        }catch(Exception $e){
+            echo  $e->getMessage();
+
+        }
+    }
 }

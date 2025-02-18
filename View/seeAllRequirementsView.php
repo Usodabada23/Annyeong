@@ -39,7 +39,6 @@ if (!isset($_SESSION["user_id"])){
                 <tr>
                     <th>ID</th>
                     <th>Provider</th>
-                    <th>Client</th>
                     <th>Service</th>
                     <th>Location</th>
                     <th>Date</th>
@@ -52,15 +51,14 @@ if (!isset($_SESSION["user_id"])){
                     <tr>
                         <td><?= htmlspecialchars($requirement["id"]) ?></td>
                         <td><?= htmlspecialchars($requirement["provider_id"]) ?></td>
-                        <td><?= htmlspecialchars($requirement["client_id"]) ?></td>
                         <td><?= htmlspecialchars($requirement["service_id"]) ?></td>
                         <td><?= htmlspecialchars($requirement["location"]) ?></td>
                         <td><?= htmlspecialchars($requirement["date"]) ?></td>
                         <td><?= htmlspecialchars($requirement["preference"]) ?></td>
                         <td><?= htmlspecialchars($requirement["updated_at"]) ?></td>
                         <td><a href="http://localhost/Annyeong/index.php?page=details&number=<?php echo $requirement['id']; ?>">More details</a></td>
-                        <td><a href="">Modify</a></td>
-                        <td><a href="http://localhost/Annyeong/index.php?page=delete">Delete</a></td>
+                        <td><a href="http://localhost/Annyeong/index.php?page=modify&number=<?php echo $requirement['id']; ?>">Modify</a></td>
+                        <td><a href="http://localhost/Annyeong/index.php?page=delete&number=<?php echo $requirement['id']; ?>">Delete</a></td>
                     </tr>
                 <?php } ?>
             </tbody>

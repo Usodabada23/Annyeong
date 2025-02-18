@@ -69,7 +69,7 @@ class RequirementController{
         $provider = User::getInfosById($firstReq["provider_id"]);
     
         $details = [
-            "serviceDetail" => $service["name"]." will cost you ".$service["price"]."$",
+            "serviceDetail" => $service["name"]." will cost you minimum ".$service["price"]."$",
             "providerDetail" => $provider["email"],
             "location" => $firstReq["location"],
             "date" => $firstReq["date"],
@@ -106,8 +106,8 @@ class RequirementController{
     public function seeAllRequirements(){
         session_start();
         if(isset($_SESSION["user_id"])){
-            $id = $_SESSION["user_id"];
-            return Requirement::seeRequirementsByClient($id);   
+            $client_id = $_SESSION["user_id"];
+            return Requirement::seeRequirementsByClient($client_id);   
         }else{
             header("Location: http://localhost/Annyeong/index.php?page=login");
         }
