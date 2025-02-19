@@ -26,6 +26,11 @@
             </div>
             <button type="submit" value="login">Login</button> 
         </form>
+        <?php
+        if(isset($_GET["error"])){
+            echo "<p style='color:red;'>Error: User not found.</p>";
+        }
+        ?>
     </main>
     <footer class="annyeong-footer">
        <h4 class="annyeong-footer__h4">Annyeong</h4>

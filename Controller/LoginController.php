@@ -14,6 +14,11 @@ class LoginController{
             $pwd = $_POST["password"];
             
             $user = User::getDetailsByUsername($username);
+            if (!is_array($user)) { 
+                header("Location: http://localhost/Annyeong/index.php?page=login&error=user_not_found");
+                exit();
+
+            }
             $hashedpwd = $user["password"];
             if($user && password_verify($pwd,$hashedpwd)){
                 sleep(2);
