@@ -34,6 +34,7 @@ if (!isset($_SESSION["user_id"])){
     <main class="main-container">   
     <?php
     if ($details) {
+        $number = $_GET["number"];
         echo "<h2>Requirement Details</h2>";
         echo "<p><strong>Service:</strong> " . htmlspecialchars($details["serviceDetail"]) . "</p>";
         echo "<p><strong>Provider email:</strong> " . htmlspecialchars($details["providerDetail"]) . "</p>";
@@ -42,6 +43,14 @@ if (!isset($_SESSION["user_id"])){
         echo "<p><strong>Preference:</strong> " . htmlspecialchars($details["preference"]) . "</p>";
         echo "<p><strong>Created At:</strong> " . htmlspecialchars($details["created_at"]) . "</p>";
         echo "<p><strong>Last Updated:</strong> " . htmlspecialchars($details["updated_at"]) . "</p>";
+        echo "<div class='pagination'>";
+        if ($number > 1) {
+            echo "<a href='index.php?page=details&number=" . ($number - 1) . "'>⟨ Previous Requirement</a>";
+        }
+        if ($number < $totalRequirements) {
+            echo "<a href='index.php?page=details&number=" . ($number + 1) . "'>Next Requirement ⟩</a>";
+        }
+        echo "</div>";
     } else {
         echo "<p>Requirement details not found.</p>";
     }

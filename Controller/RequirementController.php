@@ -12,6 +12,7 @@ class RequirementController{
     public function seeRequirements(){
         $requirements = $this->seeAllRequirements();
 
+        
         require "View/seeAllRequirementsView.php";
     }
 
@@ -20,7 +21,8 @@ class RequirementController{
             echo "Invalid request!";
             return;
         }
-    
+        
+        $totalRequirements = $this->getTotalRequirements();
         $details = $this->getDetailsOfRequirement();
     
         if ($details) {
@@ -49,10 +51,8 @@ class RequirementController{
         $client_id = $_SESSION["user_id"];
         $i = intval($_GET["number"])-1;
     
-        // Fetch requirements
         $requirements = Requirement::seeRequirementsByClient($client_id);
     
-        // Validate index exists
         if (!isset($requirements[$i])) {
             echo "Requirement not found!";
             return null;
@@ -60,7 +60,6 @@ class RequirementController{
     
         $firstReq = $requirements[$i];
     
-        // Ensure required keys exist
         if (!isset($firstReq["service_id"]) || !isset($firstReq["provider_id"])) {
             echo "Requirement details are incomplete!";
             return null;
@@ -79,6 +78,14 @@ class RequirementController{
         ];
     
         return $details;
+    }
+
+    public function getTotalRequirements(){
+        session_start();
+        $client_id = $_SESSION["user_id"];
+    
+        $requirements = Requirement::seeRequirementsByClient($client_id);
+        return count($requirements);
     }
     
 

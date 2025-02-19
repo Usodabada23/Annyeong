@@ -77,7 +77,7 @@ if (!isset($_SESSION["user_id"])){
         <?php
         } else{
         ?>
-            <p>Providers not found</p>
+            <p>Providers and services not found</p>
         <?php  
         }
         ?>
