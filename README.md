@@ -17,10 +17,8 @@ et encore d'autres services ...
 
 ## ⚙️ Fonctionnement
 1. **Inscription** : Créez votre profil et renseignez vos besoins.
-2. **Réservation** : Sélectionnez un service, une date et une heure via l’application.
+2. **Réservation** : Sélectionnez un service, une date via l’application.
 3. **Choix du prestataire** : Consultez les profils, notes et avis pour choisir le meilleur prestataire.
-4. **Paiement sécurisé** : Réglez vos services directement via l’application (cartes bancaires, paiement mobile).
-
 ---
 
 ## 🛡️ Avantages
